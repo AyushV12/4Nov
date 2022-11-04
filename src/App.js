@@ -7,8 +7,8 @@ function App() {
     textAlign:"center",
     margin:"10px",
     border: "1px solid",
-    padding: "10px",
-    boxShadow: "5px 10px"
+    boxShadow: "5px 2px grey",
+    borderRadius:"10px"
    }
 
   return (
@@ -44,7 +44,7 @@ function getData(){
     var txtElement = document.getElementsByClassName("outputText")[0]
     txtElement.innerHTML = l.label_type_name
 
-    txtElement.style.position = "relative"
+    txtElement.style.position = "inherit"
     txtElement.style.left = l.left+"px"
     txtElement.style.right = l.right+"px"
     txtElement.style.bottom = l.bottom+"px"
