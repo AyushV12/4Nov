@@ -4,22 +4,26 @@ function App() {
     textAlign:"center"
    }
    var outputDivCss={
-    textAlign:"center"
+    textAlign:"center",
+    margin:"10px",
+    border: "1px solid",
+    padding: "10px",
+    boxShadow: "5px 10px"
    }
 
   return (
     <div className="App">
       <div className="inputDiv" style={inputDivCss}>
-      <input className="inputFile"  type="file"></input>
-      <button onClick={getData}> Get</button>
-</div>
-<div className="DisplayText" style={outputDivCss}>
-<span className="outputText" ></span>
-</div>
-<div className="outputDiv" style={outputDivCss}>
-<img className="output" id="output">
-</img>
-</div>
+        <input className="inputFile" type="file"></input>
+        <button onClick={getData}> Get Data</button>
+      </div>
+      <div className="DisplayText" style={outputDivCss}>
+        <span className="outputText" ></span>
+      </div>
+      <div className="outputDiv" style={outputDivCss}>
+        <img className="output" id="output">
+        </img>
+      </div>
     </div>
   );
 function getData(){
@@ -30,21 +34,21 @@ function getData(){
   openFile(inputFile.files[0])
 
   function a(l){
-    l=eval(l)
-    l=l[0]
-    for (let i=0;i<Object.keys(l).length;i++){
-      var  key= Object.keys(l)[i]
-      l[key]=l[key].toString()
+    l = eval(l)
+    l = l[0]
+    for (let i = 0; i < Object.keys(l).length; i++) {
+      var key = Object.keys(l)[i]
+      l[key] = l[key].toString()
     }
     console.log(l)
-    var txtElement=document.getElementsByClassName("outputText")[0]
-   txtElement.innerHTML=l.label_type_name
+    var txtElement = document.getElementsByClassName("outputText")[0]
+    txtElement.innerHTML = l.label_type_name
 
-   txtElement.style.position="relative"
-   txtElement.style.left=l.left
-   txtElement.style.right=l.right
-   txtElement.style.bottom=l.bottom
-   txtElement.style.top=l.top
+    txtElement.style.position = "relative"
+    txtElement.style.left = l.left+"px"
+    txtElement.style.right = l.right+"px"
+    txtElement.style.bottom = l.bottom+"px"
+    txtElement.style.top = l.top+"px"
 
 
 
